@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title>Quote-slider App</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet" />
+	</head>
+
+	<body>
+		<section class="main__container">
+			<quote-slider>
+				<section class="button__container">
+					<button type="button" class="back" @click="prev">Previous</button>
+					<a id="download" download="myQuote.png">
+						<button type="button" id="buttonDownload" class="buttonDownload" @click="download"
+							download="myQuote.png">
+							Download
+						</button>
+					</a>
+					<button type="button" class="button" @click="next">Next</button>
+				</section>
+				<section id="quote__container" class="quote__container">
+					<h1>{{ currentQuote }}</h1>
+				</section>
+
+				<!-- Canvas start -->
+				<section class="canvasImage">
+					<a id="download" download="myQuote.png">
+						<button type="button" onClick="download()">Download</button>
+					</a>
+
+					<canvas id="myCanvas" width="720" height="450">Your browser does not support Canvas.</canvas>
+				</section>
+				<!-- Canvas end -->
+			</quote-slider>
+		</section>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="main.js"></script>
+	</body>
+
+</html>

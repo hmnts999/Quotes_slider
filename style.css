@@ -1,0 +1,179 @@
+:root {
+	outline: none;
+	background-color: #444;
+}
+
+.main__container {
+	box-shadow: -1rem 0 3rem #000;
+	background-color: rgb(51, 51, 51);
+	position: relative;
+	border-radius: 15px;
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+}
+.main__container button {
+	outline: none;
+	padding: 5px;
+	color: white;
+	background-color: rgb(29, 161, 242);
+	text-align: center;
+	cursor: pointer;
+	/* max-width: max-content !important; */
+	font-size: 14px;
+}
+
+.quote__container {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	color: white;
+	padding: 0.5rem;
+	min-height: 250px;
+	overflow: hidden;
+	transition: all 0.4s linear;
+}
+.button__container {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+/* Button design */
+button {
+	width: 130px;
+	height: 40px;
+	background: linear-gradient(to bottom, #4eb5e5 0%, #389ed5 100%); /* W3C */
+	border: none;
+	border-radius: 5px;
+	position: relative;
+	border-bottom: 4px solid #2270a0;
+	color: #fbfbfb;
+	font-weight: 600;
+	font-family: "Open Sans", sans-serif;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	font-size: 15px;
+	text-align: left;
+	text-indent: 5px;
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+button:active {
+	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+	top: 1px;
+}
+button:hover {
+	color: #000;
+}
+
+button:after {
+	content: "";
+	width: 0;
+	height: 0;
+	display: block;
+	border-top: 20px solid #187dbc;
+	border-bottom: 20px solid #187dbc;
+	border-left: 16px solid transparent;
+	border-right: 20px solid #187dbc;
+	position: absolute;
+	opacity: 0.6;
+	right: 0;
+	top: 0;
+	border-radius: 0 5px 5px 0;
+}
+button.back {
+	text-align: right;
+	padding-right: 12px;
+	box-sizing: border-box;
+}
+
+button.back:after {
+	content: "";
+	width: 0;
+	height: 0;
+	display: block;
+	border-top: 20px solid #187dbc;
+	border-bottom: 20px solid #187dbc;
+	border-right: 16px solid transparent;
+	border-left: 20px solid #187dbc;
+	position: absolute;
+	opacity: 0.6;
+	left: 0;
+	top: 0;
+	border-radius: 5px 0 0 5px;
+}
+
+.buttonDownload {
+	display: inline-block;
+	position: relative;
+	margin: 0 5px;
+	text-indent: 15px;
+}
+.buttonDownload:before,
+.buttonDownload:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	left: 15px;
+	top: 52%;
+}
+
+.buttonDownload:before {
+	width: 10px;
+	height: 2px;
+	border-style: solid;
+	border-width: 0 2px 2px;
+}
+
+/* Download arrow shape */
+.buttonDownload:after {
+	width: 0;
+	height: 0;
+	margin-left: 3px;
+	margin-top: -7px;
+
+	border-style: solid;
+	border-width: 4px 4px 0 4px;
+	border-color: transparent;
+	border-top-color: inherit;
+
+	animation: downloadArrow 2s linear infinite;
+	animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+	border-color: #20500a;
+}
+
+.buttonDownload:hover:after {
+	border-top-color: #1f3b11;
+	animation-play-state: running;
+}
+
+@keyframes downloadArrow {
+	0% {
+		margin-top: -7px;
+		opacity: 1;
+	}
+
+	0.001% {
+		margin-top: -15px;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		margin-top: 0;
+		opacity: 0;
+	}
+}
+
+/* Hiding canvas */
+.canvasImage {
+	display: none;
+}
